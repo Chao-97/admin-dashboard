@@ -10,7 +10,9 @@
     "lint": "eslint --fix src test",
     "test": "jest",
     "db:seed": "npx prisma migrate dev --name init && npx prisma db seed",
-    "generate": "npx prisma migrate reset --preview-feature && npx prisma migrate deploy"
+    "generate": "npx prisma migrate reset --preview-feature && npx prisma migrate deploy",
+    "prisma:migrate:dev": "dotenv -e .env prisma migrate dev",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
@@ -39,7 +41,7 @@
     "@types/jest": "^29.2.5",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/morgan": "^1.9.4",
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.15.11",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",

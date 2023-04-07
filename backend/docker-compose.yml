@@ -1,0 +1,19 @@
+version: "4"
+
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: photoshot
+      POSTGRES_PASSWORD: photoshot
+      POSTGRES_DB: photoshot
+    ports:
+      - 5444:5432
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+
+volumes:
+  postgresql:
+  postgresql_data:
